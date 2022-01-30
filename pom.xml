@@ -3,7 +3,6 @@
   <groupId>java-Program</groupId>
   <artifactId>java-program</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-</project>
   <name>JenkinsWar Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
