@@ -15,11 +15,18 @@ pipeline {
                 bat "mvn test"
             }
         }
-        stage('deploy') {
-            steps {
-                echo 'deploy project'
-                 bat "mvn deploy"
-            }
-        }
+       stage('Deploy')
+		{
+			steps
+			{
+				script
+				{
+				         bat "copy C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\java-project-pipeline\\target\\*.war C:\\apache-tomcat-10.0.16\\webapps\\JenkinsWar.war"
+                	   		 powershell '''
+						Restart-Service -Name Tomcat8
+					'''
+				}
+			}
+		}
     }
 }
