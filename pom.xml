@@ -3,7 +3,6 @@
   <groupId>java-Program</groupId>
   <artifactId>java-program</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-</project>
   <name>JenkinsWar Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
@@ -22,7 +21,7 @@
 		<artifactId>maven-plugin</artifactId>
 		<version>2.2</version>
 		<configuration>
-			<url>http://10.0.0.80:8080/manager/text</url>
+			<url>localhost:8082/manager/text</url>
 			<server>TomcatServer</server>
 			<path>/website</path>
 		</configuration>
