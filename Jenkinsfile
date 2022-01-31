@@ -21,7 +21,7 @@ pipeline {
 			{
 				script
 				{
-				         bat "copy C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\java-project-pipeline\\target C:\\apache-tomcat-10.0.16\\webapps"
+				         bat "copy C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\java-project-pipeline\\target\\*war C:\\apache-tomcat-10.0.16\\webapps\\JenkinsWar.war"
                 	   		 powershell '''
 						Restart-Service -Name Tomcat8
 					'''
