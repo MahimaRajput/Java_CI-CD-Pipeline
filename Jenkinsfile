@@ -21,7 +21,6 @@ pipeline {
 			{
 			
 				        echo 'deploy project'
-					bat "mvn deploy"
 				
 			}
 		}
