@@ -19,11 +19,10 @@ pipeline {
 		{
 			steps
 			{
-				script
-				{
+			
 				        echo 'deploy project'
 					bat "mvn deploy"
-				}
+				
 			}
 		}
     }
