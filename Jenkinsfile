@@ -26,6 +26,7 @@ pipeline {
                 bat "mvn test"
             }
         }
+	    
 	    stage('Docker Build') 
 		{
 			steps 
@@ -49,6 +50,17 @@ pipeline {
 					  bat "docker push mahimarajput26/docker_repo:${BUILD_NUMBER}"
 					  bat "docker push mahimarajput26/docker_repo:latest"	
 					}
+			    }
+			}
+		}
+	      stage('Docker deploy') 
+		{
+			steps 
+			{
+			    script
+			    {
+			        bat "docker-compose up -d"
+				
 			    }
 			}
 		}
