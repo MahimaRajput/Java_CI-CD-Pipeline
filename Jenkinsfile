@@ -32,7 +32,8 @@ pipeline {
 			{
 			    script
 			    {
-			        bat "docker build -t mahimarajput26/dockerpoc:${BUILD_NUMBER} ."
+			        bat "docker build -t mahimarajput26/docker_repo:${BUILD_NUMBER} ."
+				bat "docker build -t mahimarajput26/docker_repo:latest ."
 			      
 			    }
 			}
@@ -43,9 +44,10 @@ pipeline {
 			{
 			    script
 			    {
-					withCredentials([string(credentialsId: 'doc-psw', variable: 'dockerpassword')]) {
+					withCredentials([string(credentialsId: 'Doc-psw', variable: 'dockerpassword')]) {
 					  bat "docker login -u mahimarajput26 -p ${dockerpassword}"
-					  bat "docker push mahimarajput26/dockerpoc:${BUILD_NUMBER}"
+					  bat "docker push mahimarajput26/docker_repo:${BUILD_NUMBER}"
+					  bat "docker push mahimarajput26/docker_repo:latest"	
 					}
 			    }
 			}
