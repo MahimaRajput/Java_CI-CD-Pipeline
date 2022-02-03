@@ -1,0 +1,9 @@
+version: "3"
+services:
+  my-service:
+    image: mahimarajput26/docker_repo:latest
+    build: .
+    volumes:
+      - /data/docker_repo
+    ports:
+      - "8081:8081"
