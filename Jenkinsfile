@@ -26,13 +26,28 @@ pipeline {
                 bat "mvn test"
             }
         }
-       stage('Deploy')
+	    stage('Docker Build') 
 		{
-			steps
+			steps 
 			{
-			
-				        echo 'deploy project'
-				
+			    script
+			    {
+			        bat "docker build -t mahimarajput26/dockerpoc:${BUILD_NUMBER} ."
+			      
+			    }
+			}
+		} 
+	    stage('Docker Push') 
+		{
+			steps 
+			{
+			    script
+			    {
+					withCredentials([string(credentialsId: 'doc-psw', variable: 'dockerpassword')]) {
+					  bat "docker login -u mahimarajput26 -p ${dockerpassword}"
+					  bat "docker push mahimarajput26/dockerpoc:${BUILD_NUMBER}"
+					}
+			    }
 			}
 		}
     }
