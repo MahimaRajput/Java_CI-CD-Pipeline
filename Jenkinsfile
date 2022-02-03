@@ -43,7 +43,7 @@ pipeline {
 			{
 			    script
 			    {
-					withCredentials([string(credentialsId: 'doc-psw', variable: 'dockerpassword')]) {
+					withCredentials([string(credentialsId: 'Doc-psw', variable: 'dockerpassword')]) {
 					  bat "docker login -u mahimarajput26 -p ${dockerpassword}"
 					  bat "docker push mahimarajput26/dockerpoc:${BUILD_NUMBER}"
 					}
