@@ -6,9 +6,9 @@ pipeline {
 		{
 			steps 
 			{
-				git branch: 'main',
+				git branch: 'master',
 				credentialsId: '0f5a239d-86ca-4a61-bad1-a36f80b67ac6',
-				url: 'https://github.com/MahimaRajput/demo-project/edit/master/Jenkinsfile'
+				url: 'https://github.com/MahimaRajput/Project_example'
 				
 				stash includes: '**', name: 'builtSources'
 			}
