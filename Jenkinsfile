@@ -12,6 +12,7 @@ pipeline {
 				stash includes: '**', name: 'builtSources'
 			}
 		}
+	    
         stage('build') {
             steps {
                 echo 'build project'
